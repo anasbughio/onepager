@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-courier: "Courier New", Courier, monospace;
+
+}
