@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   FaChevronLeft, 
   FaChevronRight, 
@@ -8,10 +9,21 @@ import {
 } from 'react-icons/fa';
 import team1 from '../assets/team1.jpg';
 import team2 from '../assets/team2.jpg';
-import team3 from  '../assets/team3.jpg';
+import team3 from '../assets/team3.jpg';
 import team4 from '../assets/team4.jpg';
 
 const Team = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 2; // Slide 0 (first 4) and Slide 1 (next 4)
+
+  const goToPrev = () => {
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
+
   return (
     <section 
       id="team" 
@@ -27,17 +39,23 @@ const Team = () => {
           title="Background Video"
         ></iframe>
         
-        {/* Dark Overlay (Ensures white text is readable over the bright video) */}
+        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-[#2c353f]/85"></div>
       </div>
       {/* -------------------------------- */}
 
-      {/* Slider Arrows (Hidden on mobile for better UX, visible on lg screens) */}
-      <button className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 z-20 hidden lg:block">
+      {/* Slider Arrows */}
+      <button 
+        onClick={goToPrev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 hover:bg-[#2eb8b8] transition-colors duration-300 z-20 hidden lg:block"
+      >
         <FaChevronLeft size={16} />
       </button>
       
-      <button className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 z-20 hidden lg:block">
+      <button 
+        onClick={goToNext}
+        className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 hover:bg-[#2eb8b8] transition-colors duration-300 z-20 hidden lg:block"
+      >
         <FaChevronRight size={16} />
       </button>
 
@@ -53,113 +71,160 @@ const Team = () => {
           </p>
         </div>
 
-        {/* Team Grid (Hardcoded) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          {/* TEAM MEMBER 1 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="w-full aspect-square overflow-hidden bg-gray-200">
-              <img 
-                src={team1}
-                alt="Owen Miller" 
-                className="w-full h-full object-cover grayscale"
-                loading="lazy"
-              />
+        {/* Carousel Viewport */}
+        <div className="overflow-hidden">
+          {/* Sliding Track */}
+          <div 
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            
+            {/* ================= SLIDE 1 (First 4 Members) ================= */}
+            <div className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              
+              {/* TEAM MEMBER 1 */}
+              <div className="flex flex-col group cursor-pointer">
+                <div className="w-full aspect-square overflow-hidden bg-gray-200">
+                  <img src={team1} alt="Owen Miller" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Owen Miller</h3>
+                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                </div>
+                <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaTwitter size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaRss size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaGooglePlusG size={14} /></a>
+                </div>
+              </div>
+
+              {/* TEAM MEMBER 2 */}
+              <div className="flex flex-col group cursor-pointer">
+                <div className="w-full aspect-square overflow-hidden bg-gray-200">
+                  <img src={team2} alt="Mike William" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Mike William</h3>
+                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                </div>
+                <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaTwitter size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaRss size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaGooglePlusG size={14} /></a>
+                </div>
+              </div>
+
+              {/* TEAM MEMBER 3 */}
+              <div className="flex flex-col group cursor-pointer">
+                <div className="w-full aspect-square overflow-hidden bg-gray-200">
+                  <img src={team4} alt="Besim Dauti" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Besim Dauti</h3>
+                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                </div>
+                <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaTwitter size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaRss size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaGooglePlusG size={14} /></a>
+                </div>
+              </div>
+
+              {/* TEAM MEMBER 4 */}
+              <div className="flex flex-col group cursor-pointer">
+                <div className="w-full aspect-square overflow-hidden bg-gray-200">
+                  <img src={team3} alt="Faton Avdiu" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Faton Avdiu</h3>
+                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                </div>
+                <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaTwitter size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaRss size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaGooglePlusG size={14} /></a>
+                </div>
+              </div>
+
             </div>
-            <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
-              <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">
-                Owen Miller
-              </h3>
-              <p className="font_family text-gray-400 text-xs  font-serif">
-                developer
-              </p>
-            </div>
-            <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaFacebookF size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaTwitter size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaRss size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaGooglePlusG size={14} /></a>
+
+            {/* ================= SLIDE 2 (Next 4 Members) ================= */}
+            <div className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              
+              {/* TEAM MEMBER 5 */}
+              <div className="flex flex-col group cursor-pointer">
+                <div className="w-full aspect-square overflow-hidden bg-gray-200">
+                  <img src={team2} alt="John Doe" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">John Doe</h3>
+                  <p className="font_family text-gray-400 text-xs font-serif">designer</p>
+                </div>
+                <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaTwitter size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaRss size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaGooglePlusG size={14} /></a>
+                </div>
+              </div>
+
+              {/* TEAM MEMBER 6 */}
+              <div className="flex flex-col group cursor-pointer">
+                <div className="w-full aspect-square overflow-hidden bg-gray-200">
+                  <img src={team1} alt="Sarah Smith" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Sarah Smith</h3>
+                  <p className="font_family text-gray-400 text-xs font-serif">manager</p>
+                </div>
+                <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaTwitter size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaRss size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaGooglePlusG size={14} /></a>
+                </div>
+              </div>
+
+              {/* TEAM MEMBER 7 */}
+              <div className="flex flex-col group cursor-pointer">
+                <div className="w-full aspect-square overflow-hidden bg-gray-200">
+                  <img src={team3} alt="Mark Johnson" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Mark Johnson</h3>
+                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                </div>
+                <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaTwitter size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaRss size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaGooglePlusG size={14} /></a>
+                </div>
+              </div>
+
+              {/* TEAM MEMBER 8 */}
+              <div className="flex flex-col group cursor-pointer">
+                <div className="w-full aspect-square overflow-hidden bg-gray-200">
+                  <img src={team4} alt="Emily Davis" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
+                </div>
+                <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Emily Davis</h3>
+                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                </div>
+                <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaTwitter size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaRss size={12} /></a>
+                  <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaGooglePlusG size={14} /></a>
+                </div>
+              </div>
+
             </div>
           </div>
-
-          {/* TEAM MEMBER 2 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="w-full aspect-square overflow-hidden bg-gray-200">
-              <img 
-                src={team2}
-                alt="Mike William" 
-                className="w-full h-full object-cover grayscale"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
-              <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">
-                Mike William
-              </h3>
-              <p className="font_family text-gray-400 text-xs  font-serif">
-                developer
-              </p>
-            </div>
-            <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaFacebookF size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaTwitter size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaRss size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaGooglePlusG size={14} /></a>
-            </div>
-          </div>
-
-          {/* TEAM MEMBER 3 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="w-full aspect-square overflow-hidden bg-gray-200">
-              <img 
-                src={team4}
-                alt="Besim Dauti" 
-                className="w-full h-full object-cover grayscale"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
-              <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">
-                Besim Dauti
-              </h3>
-              <p className="text-gray-400 text-xs  font-serif">
-                developer
-              </p>
-            </div>
-            <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaFacebookF size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaTwitter size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaRss size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaGooglePlusG size={14} /></a>
-            </div>
-          </div>
-
-          {/* TEAM MEMBER 4 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="w-full aspect-square overflow-hidden bg-gray-200">
-              <img 
-                src={team3}
-                alt="Faton Avdiu" 
-                className="w-full h-full object-cover grayscale"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
-              <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">
-                Faton Avdiu
-              </h3>
-              <p className="font_family text-gray-400 text-xs  font-serif">
-                developer
-              </p>
-            </div>
-            <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaFacebookF size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaTwitter size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaRss size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaGooglePlusG size={14} /></a>
-            </div>
-          </div>
-
         </div>
 
       </div>
