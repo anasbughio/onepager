@@ -228,7 +228,6 @@ const Portfolio = () => {
               <div className="absolute inset-0 border-4 border-transparent group-hover:border-[#2eb8b8] pointer-events-none"></div>
             </div>
           )}
-
         </div>
       </div>
     </section>
