@@ -1,14 +1,15 @@
+import { useState } from 'react';
 import { FaWordpress, FaOpera } from 'react-icons/fa';
 
 const Biography = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   return (
     <section id="biography" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
           
-          {/* Left Column: Company Biography */}
           <div>
-            {/* Header Block */}
             <div className="mb-8">
               <h2 className="font_family text-2xl md:text-3xl font-bold tracking-[0.1em] text-black uppercase mb-3 font-serif">
                 Company Biography
@@ -17,8 +18,6 @@ const Biography = () => {
                 Short Story About Us
               </div>
             </div>
-
-            {/* Text Content */}
             <div className="space-y-6 text-gray-500 font-serif text-sm md:text-base leading-relaxed">
               <p className='font_family'>
                 This is <span className="text-[#2eb8b8] font-bold">Photoshop's</span> version of Lorem Ipsum. 
@@ -36,53 +35,123 @@ const Biography = () => {
             </div>
           </div>
 
-          {/* Right Column: Our Clients */}
+          
           <div>
-            {/* Header Block */}
-            <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            
+            <div className="mb-8 flex items-end justify-between gap-4">
               <div>
                 <h2 className="font_family text-2xl md:text-3xl font-bold tracking-[0.1em] text-black uppercase mb-3 font-serif">
                   Our Clients
                 </h2>
-                <div className="ifont_family nline-block bg-[#2eb8b8] text-white text-xs md:text-sm tracking-widest px-3 py-1 uppercase">
+                <div className="font_family inline-block bg-[#2eb8b8] text-white text-xs md:text-sm tracking-widest px-3 py-1 uppercase">
                   We Love Our Clients
                 </div>
               </div>
+            
+              <div className="flex gap-2 mb-1">
+                <button 
+                  onClick={() => setCurrentSlide(0)} 
+                  className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${currentSlide === 0 ? 'bg-gray-300' : 'border border-gray-300 bg-transparent hover:bg-gray-100'}`}
+                  aria-label="Go to slide 1"
+                ></button>
+                <button 
+                  onClick={() => setCurrentSlide(1)} 
+                  className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${currentSlide === 1 ? 'bg-gray-300' : 'border border-gray-300 bg-transparent hover:bg-gray-100'}`}
+                  aria-label="Go to slide 2"
+                ></button>
+                <button 
+                  onClick={() => setCurrentSlide(2)} 
+                  className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${currentSlide === 2 ? 'bg-gray-300' : 'border border-gray-300 bg-transparent hover:bg-gray-100'}`}
+                  aria-label="Go to slide 3"
+                ></button>
+                <button 
+                  onClick={() => setCurrentSlide(3)} 
+                  className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${currentSlide === 3 ? 'bg-gray-300' : 'border border-gray-300 bg-transparent hover:bg-gray-100'}`}
+                  aria-label="Go to slide 4"
+                ></button>
+              </div>
             </div>
 
-            {/* Clients Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {/* Opera Logo Box */}
-              <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
-                <div className="flex items-center text-white gap-2">
-                   <FaOpera size={40} />
-                   <div className="flex flex-col items-start leading-none">
-                     <span className="font_family font-bold text-xl tracking-wider">OPERA™</span>
-                     <span className="font_family text-xs tracking-widest">software</span>
-                   </div>
+            <div className="overflow-hidden">
+  
+              <div 
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+              
+                <div className="w-full flex-shrink-0 grid grid-cols-2 gap-4">
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <div className="flex items-center text-white gap-2">
+                       <FaOpera size={40} />
+                       <div className="flex flex-col items-start leading-none">
+                         <span className="font_family font-bold text-xl tracking-wider">OPERA™</span>
+                         <span className="font_family text-xs tracking-widest">software</span>
+                       </div>
+                    </div>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <div className="font_family w-14 h-14 bg-white rounded-full flex items-center justify-center font-bold text-[#2eb8b8] text-3xl font-serif">
+                      hp
+                    </div>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <div className="flex items-center text-white gap-2">
+                      <FaWordpress size={36} />
+                      <span className="font_family font-serif text-lg tracking-widest">WORDPRESS</span>
+                    </div>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-3xl tracking-wider">
+                      Canon
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* HP Logo Box */}
-              <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
-                <div className="font_family w-14 h-14 bg-white rounded-full flex items-center justify-center font-bold text-[#2eb8b8] text-3xl font-serif">
-                  hp
+                <div className="w-full flex-shrink-0 grid grid-cols-2 gap-4">
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">SAMSUNG</span>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">SONY</span>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">GOOGLE</span>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">APPLE</span>
+                  </div>
                 </div>
-              </div>
 
-              {/* WordPress Logo Box */}
-              <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
-                <div className="flex items-center text-white gap-2">
-                  <FaWordpress size={36} />
-                  <span className="font_family font-serif text-lg tracking-widest">WORDPRESS</span>
+                <div className="w-full flex-shrink-0 grid grid-cols-2 gap-4">
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">AMAZON</span>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">MICROSOFT</span>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">INTEL</span>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">IBM</span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Canon Logo Box */}
-              <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
-                <span className="font_family text-white font-serif font-bold text-3xl tracking-wider">
-                  Canon
-                </span>
+                <div className="w-full flex-shrink-0 grid grid-cols-2 gap-4">
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">TESLA</span>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">FORD</span>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">TOYOTA</span>
+                  </div>
+                  <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
+                    <span className="font_family text-white font-serif font-bold text-2xl tracking-wider">HONDA</span>
+                  </div>
+                </div>
+
               </div>
             </div>
 
