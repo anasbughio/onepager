@@ -6,9 +6,7 @@ const Biography = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
           
-          {/* Left Column: Company Biography */}
           <div>
-            {/* Header Block */}
             <div className="mb-8">
               <h2 className="font_family text-2xl md:text-3xl font-bold tracking-[0.1em] text-black uppercase mb-3 font-serif">
                 Company Biography
@@ -18,7 +16,6 @@ const Biography = () => {
               </div>
             </div>
 
-            {/* Text Content */}
             <div className="space-y-6 text-gray-500 font-serif text-sm md:text-base leading-relaxed">
               <p className='font_family'>
                 This is <span className="text-[#2eb8b8] font-bold">Photoshop's</span> version of Lorem Ipsum. 
@@ -36,9 +33,7 @@ const Biography = () => {
             </div>
           </div>
 
-          {/* Right Column: Our Clients */}
           <div>
-            {/* Header Block */}
             <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <h2 className="font_family text-2xl md:text-3xl font-bold tracking-[0.1em] text-black uppercase mb-3 font-serif">
@@ -50,9 +45,7 @@ const Biography = () => {
               </div>
             </div>
 
-            {/* Clients Grid */}
             <div className="grid grid-cols-2 gap-4">
-              {/* Opera Logo Box */}
               <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
                 <div className="flex items-center text-white gap-2">
                    <FaOpera size={40} />
@@ -63,14 +56,12 @@ const Biography = () => {
                 </div>
               </div>
 
-              {/* HP Logo Box */}
               <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
                 <div className="font_family w-14 h-14 bg-white rounded-full flex items-center justify-center font-bold text-[#2eb8b8] text-3xl font-serif">
                   hp
                 </div>
               </div>
 
-              {/* WordPress Logo Box */}
               <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
                 <div className="flex items-center text-white gap-2">
                   <FaWordpress size={36} />
@@ -78,7 +69,6 @@ const Biography = () => {
                 </div>
               </div>
 
-              {/* Canon Logo Box */}
               <div className="bg-[#2eb8b8] aspect-[4/3] flex items-center justify-center p-4 hover:opacity-90 transition-opacity cursor-pointer">
                 <span className="font_family text-white font-serif font-bold text-3xl tracking-wider">
                   Canon

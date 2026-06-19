@@ -17,7 +17,6 @@ const Team = () => {
       id="team" 
       className="relative py-24 bg-[#2c353f] overflow-hidden"
     >
-      {/* --- YOUTUBE VIDEO BACKGROUND --- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <iframe
           className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
@@ -27,12 +26,9 @@ const Team = () => {
           title="Background Video"
         ></iframe>
         
-        {/* Dark Overlay (Ensures white text is readable over the bright video) */}
         <div className="absolute inset-0 bg-[#2c353f]/85"></div>
       </div>
-      {/* -------------------------------- */}
 
-      {/* Slider Arrows (Hidden on mobile for better UX, visible on lg screens) */}
       <button className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 z-20 hidden lg:block">
         <FaChevronLeft size={16} />
       </button>
@@ -43,7 +39,6 @@ const Team = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font_family text-5xl md:text-4xl tracking-tight font-bold text-white uppercase mb-4 font-serif">
             Meet The Team
@@ -53,10 +48,8 @@ const Team = () => {
           </p>
         </div>
 
-        {/* Team Grid (Hardcoded) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {/* TEAM MEMBER 1 */}
           <div className="flex flex-col group cursor-pointer">
             <div className="w-full aspect-square overflow-hidden bg-gray-200">
               <img 
@@ -82,7 +75,6 @@ const Team = () => {
             </div>
           </div>
 
-          {/* TEAM MEMBER 2 */}
           <div className="flex flex-col group cursor-pointer">
             <div className="w-full aspect-square overflow-hidden bg-gray-200">
               <img 
@@ -108,7 +100,6 @@ const Team = () => {
             </div>
           </div>
 
-          {/* TEAM MEMBER 3 */}
           <div className="flex flex-col group cursor-pointer">
             <div className="w-full aspect-square overflow-hidden bg-gray-200">
               <img 
@@ -134,7 +125,6 @@ const Team = () => {
             </div>
           </div>
 
-          {/* TEAM MEMBER 4 */}
           <div className="flex flex-col group cursor-pointer">
             <div className="w-full aspect-square overflow-hidden bg-gray-200">
               <img 
