@@ -19,9 +19,9 @@ const Stats = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* Stat Card 1: Lines of code written */}
-          <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white hover:shadow-xl transition-shadow duration-300 group cursor-default">
+          <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white cursor-default">
             {/* Icon */}
-            <div className="text-[#2eb8b8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
+            <div className="text-[#2eb8b8] mb-6">
               <FaFlask size={48} />
             </div>
             {/* Number */}
@@ -35,8 +35,8 @@ const Stats = () => {
           </div>
 
           {/* Stat Card 2: Coffe Drinked */}
-          <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white hover:shadow-xl transition-shadow duration-300 group cursor-default">
-            <div className="text-[#2eb8b8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
+          <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white cursor-default">
+            <div className="text-[#2eb8b8] mb-6">
               <FaCoffee size={48} />
             </div>
             <h3 className="font_family text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-wider">
@@ -48,8 +48,8 @@ const Stats = () => {
           </div>
 
           {/* Stat Card 3: Happy Clients */}
-          <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white hover:shadow-xl transition-shadow duration-300 group cursor-default">
-            <div className="text-[#2eb8b8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
+          <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white cursor-default">
+            <div className="text-[#2eb8b8] mb-6">
               <FaUsers size={48} />
             </div>
             <h3 className="font_family text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-wider">
@@ -61,8 +61,8 @@ const Stats = () => {
           </div>
 
           {/* Stat Card 4: Projects Done */}
-          <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white hover:shadow-xl transition-shadow duration-300 group cursor-default">
-            <div className="text-[#2eb8b8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
+          <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white cursor-default">
+            <div className="text-[#2eb8b8] mb-6">
               <FaBriefcase size={48} />
             </div>
             <h3 className="font_family text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-wider">

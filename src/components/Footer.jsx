@@ -24,7 +24,7 @@ const Footer = () => {
             {/* Facebook */}
             <a 
               href="#" 
-              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"
+              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
               aria-label="Facebook"
             >
               <FaFacebookF size={16} />
@@ -33,7 +33,7 @@ const Footer = () => {
             {/* Twitter */}
             <a 
               href="#" 
-              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"
+              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
               aria-label="Twitter"
             >
               <FaTwitter size={16} />
@@ -42,7 +42,7 @@ const Footer = () => {
             {/* RSS */}
             <a 
               href="#" 
-              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"
+              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
               aria-label="RSS"
             >
               <FaRss size={16} />
@@ -51,7 +51,7 @@ const Footer = () => {
             {/* Google Plus */}
             <a 
               href="#" 
-              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"
+              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
               aria-label="Google Plus"
             >
               <FaGooglePlusG size={16} />
@@ -60,7 +60,7 @@ const Footer = () => {
             {/* LinkedIn */}
             <a 
               href="#" 
-              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"
+              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
               aria-label="LinkedIn"
             >
               <FaLinkedinIn size={16} />
@@ -69,7 +69,7 @@ const Footer = () => {
             {/* Pinterest */}
             <a 
               href="#" 
-              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"
+              className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
               aria-label="Pinterest"
             >
               <FaPinterestP size={16} />

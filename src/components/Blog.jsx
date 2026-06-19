@@ -23,19 +23,19 @@ const Blog = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Post 1 */}
-          <article className="flex flex-col group cursor-pointer">
+          <article className="flex flex-col cursor-default">
             {/* Image & Meta Badge Container */}
             <div className="relative mb-8">
               <div className="w-full h-48 overflow-hidden bg-gray-100">
                 <img 
                   src={post1}
                   alt="Blog thumbnail" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
               {/* Overlapping Meta Badge */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2eb8b8] text-white px-4 py-2 flex items-center gap-4 text-xs font-semibold tracking-wider whitespace-nowrap shadow-sm transition-colors duration-300 group-hover:bg-[#259696]">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2eb8b8] text-white px-4 py-2 flex items-center gap-4 text-xs font-semibold tracking-wider whitespace-nowrap shadow-sm">
                 <div className="flex items-center gap-1.5">
                   <FaRegClock size={12} />
                   <span>19 Oct</span>
@@ -48,7 +48,7 @@ const Blog = () => {
             </div>
             {/* Text Content */}
             <div className="text-center px-2">
-              <h3 className="text-sm font-serif font-bold text-gray-700 leading-relaxed mb-4 group-hover:text-[#2eb8b8] transition-colors duration-300">
+              <h3 className="text-sm font-serif font-bold text-gray-700 leading-relaxed mb-4">
                 Mobile Friendly Comments Dashboard now launched!
               </h3>
               <hr className="border-gray-200 w-full mb-4" />
@@ -59,17 +59,17 @@ const Blog = () => {
           </article>
 
           {/* Post 2 */}
-          <article className="flex flex-col group cursor-pointer">
+          <article className="flex flex-col cursor-default">
             <div className="relative mb-8">
               <div className="w-full h-48 overflow-hidden bg-gray-100">
                 <img 
                   src={post2}
                   alt="Blog thumbnail" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2eb8b8] text-white px-4 py-2 flex items-center gap-4 text-xs font-semibold tracking-wider whitespace-nowrap shadow-sm transition-colors duration-300 group-hover:bg-[#259696]">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2eb8b8] text-white px-4 py-2 flex items-center gap-4 text-xs font-semibold tracking-wider whitespace-nowrap shadow-sm">
                 <div className="flex items-center gap-1.5">
                   <FaRegClock size={12} />
                   <span>19 Oct</span>
@@ -81,7 +81,7 @@ const Blog = () => {
               </div>
             </div>
             <div className="text-center px-2">
-              <h3 className="text-sm font-serif font-bold text-gray-700 leading-relaxed mb-4 group-hover:text-[#2eb8b8] transition-colors duration-300">
+              <h3 className="text-sm font-serif font-bold text-gray-700 leading-relaxed mb-4">
                 Mobile Friendly Comments Dashboard now launched!
               </h3>
               <hr className="border-gray-200 w-full mb-4" />
@@ -92,17 +92,17 @@ const Blog = () => {
           </article>
 
           {/* Post 3 */}
-          <article className="flex flex-col group cursor-pointer">
+          <article className="flex flex-col cursor-default">
             <div className="relative mb-8">
               <div className="w-full h-48 overflow-hidden bg-gray-100">
                 <img 
                   src={post3}
                   alt="Blog thumbnail" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2eb8b8] text-white px-4 py-2 flex items-center gap-4 text-xs font-semibold tracking-wider whitespace-nowrap shadow-sm transition-colors duration-300 group-hover:bg-[#259696]">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2eb8b8] text-white px-4 py-2 flex items-center gap-4 text-xs font-semibold tracking-wider whitespace-nowrap shadow-sm">
                 <div className="flex items-center gap-1.5">
                   <FaRegClock size={12} />
                   <span>19 Oct</span>
@@ -114,7 +114,7 @@ const Blog = () => {
               </div>
             </div>
             <div className="text-center px-2">
-              <h3 className="text-sm font-serif font-bold text-gray-700 leading-relaxed mb-4 group-hover:text-[#2eb8b8] transition-colors duration-300">
+              <h3 className="text-sm font-serif font-bold text-gray-700 leading-relaxed mb-4">
                 Mobile Friendly Comments Dashboard now launched!
               </h3>
               <hr className="border-gray-200 w-full mb-4" />
@@ -125,17 +125,17 @@ const Blog = () => {
           </article>
 
           {/* Post 4 */}
-          <article className="flex flex-col group cursor-pointer">
+          <article className="flex flex-col cursor-default">
             <div className="relative mb-8">
               <div className="w-full h-48 overflow-hidden bg-gray-100">
                 <img 
                   src={post4}
                   alt="Blog thumbnail" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2eb8b8] text-white px-4 py-2 flex items-center gap-4 text-xs font-semibold tracking-wider whitespace-nowrap shadow-sm transition-colors duration-300 group-hover:bg-[#259696]">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2eb8b8] text-white px-4 py-2 flex items-center gap-4 text-xs font-semibold tracking-wider whitespace-nowrap shadow-sm">
                 <div className="flex items-center gap-1.5">
                   <FaRegClock size={12} />
                   <span>19 Oct</span>
@@ -147,7 +147,7 @@ const Blog = () => {
               </div>
             </div>
             <div className="text-center px-2">
-              <h3 className="text-sm font-serif font-bold text-gray-700 leading-relaxed mb-4 group-hover:text-[#2eb8b8] transition-colors duration-300">
+              <h3 className="text-sm font-serif font-bold text-gray-700 leading-relaxed mb-4">
                 Mobile Friendly Comments Dashboard now launched!
               </h3>
               <hr className="border-gray-200 w-full mb-4" />

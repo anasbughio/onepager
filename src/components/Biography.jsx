@@ -38,7 +38,7 @@ const Biography = () => {
 
           {/* Right Column: Our Clients */}
           <div>
-            {/* Header Block with Pagination Dots */}
+            {/* Header Block */}
             <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <h2 className="font_family text-2xl md:text-3xl font-bold tracking-[0.1em] text-black uppercase mb-3 font-serif">
@@ -47,14 +47,6 @@ const Biography = () => {
                 <div className="ifont_family nline-block bg-[#2eb8b8] text-white text-xs md:text-sm tracking-widest px-3 py-1 uppercase">
                   We Love Our Clients
                 </div>
-              </div>
-              
-              {/* Pagination Dots */}
-              <div className="flex gap-2 pb-1">
-                <div className="w-3 h-3 rounded-full bg-gray-300"></div>
-                <div className="w-3 h-3 rounded-full border border-gray-300"></div>
-                <div className="w-3 h-3 rounded-full border border-gray-300"></div>
-                <div className="w-3 h-3 rounded-full border border-gray-300"></div>
               </div>
             </div>
 

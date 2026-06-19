@@ -33,11 +33,11 @@ const Team = () => {
       {/* -------------------------------- */}
 
       {/* Slider Arrows (Hidden on mobile for better UX, visible on lg screens) */}
-      <button className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 hover:bg-[#2eb8b8] transition-colors duration-300 z-20 hidden lg:block">
+      <button className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 z-20 hidden lg:block">
         <FaChevronLeft size={16} />
       </button>
       
-      <button className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 hover:bg-[#2eb8b8] transition-colors duration-300 z-20 hidden lg:block">
+      <button className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 z-20 hidden lg:block">
         <FaChevronRight size={16} />
       </button>
 
@@ -62,7 +62,7 @@ const Team = () => {
               <img 
                 src={team1}
                 alt="Owen Miller" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                className="w-full h-full object-cover grayscale"
                 loading="lazy"
               />
             </div>
@@ -75,10 +75,10 @@ const Team = () => {
               </p>
             </div>
             <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaFacebookF size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaTwitter size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaRss size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaGooglePlusG size={14} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaFacebookF size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaTwitter size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaRss size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaGooglePlusG size={14} /></a>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ const Team = () => {
               <img 
                 src={team2}
                 alt="Mike William" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                className="w-full h-full object-cover grayscale"
                 loading="lazy"
               />
             </div>
@@ -101,10 +101,10 @@ const Team = () => {
               </p>
             </div>
             <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaFacebookF size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaTwitter size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaRss size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaGooglePlusG size={14} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaFacebookF size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaTwitter size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaRss size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaGooglePlusG size={14} /></a>
             </div>
           </div>
 
@@ -114,7 +114,7 @@ const Team = () => {
               <img 
                 src={team4}
                 alt="Besim Dauti" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                className="w-full h-full object-cover grayscale"
                 loading="lazy"
               />
             </div>
@@ -127,10 +127,10 @@ const Team = () => {
               </p>
             </div>
             <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaFacebookF size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaTwitter size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaRss size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaGooglePlusG size={14} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaFacebookF size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaTwitter size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaRss size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaGooglePlusG size={14} /></a>
             </div>
           </div>
 
@@ -140,7 +140,7 @@ const Team = () => {
               <img 
                 src={team3}
                 alt="Faton Avdiu" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                className="w-full h-full object-cover grayscale"
                 loading="lazy"
               />
             </div>
@@ -153,10 +153,10 @@ const Team = () => {
               </p>
             </div>
             <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaFacebookF size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaTwitter size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaRss size={12} /></a>
-              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-all duration-300"><FaGooglePlusG size={14} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaFacebookF size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaTwitter size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaRss size={12} /></a>
+              <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white"><FaGooglePlusG size={14} /></a>
             </div>
           </div>
 
