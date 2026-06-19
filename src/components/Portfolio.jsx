@@ -6,7 +6,7 @@ import port4 from "../assets/port4.jpg";
 import port5 from "../assets/port5.jpg";
 import port6 from "../assets/port6.jpg";
 import port7 from "../assets/port11.jpg";
-import port8 from "../assets/port8.jpg";
+import port8 from "../assets/Port8.jpg";
 import port9 from "../assets/port9.jpg";
 import port10 from "../assets/port10.jpg";
 import "../css/hero.css";
