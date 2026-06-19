@@ -9,6 +9,7 @@ const Blog = () => {
     <section id="blog" className="py-24 bg-white border-t border-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font_family text-3xl md:text-4xl font-bold tracking-[0.15em] text-black uppercase mb-4 font-serif">
             Latest Posts
@@ -18,9 +19,12 @@ const Blog = () => {
           </p>
         </div>
 
+        {/* Blog Grid (Hardcoded) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
+          {/* Post 1 */}
           <article className="flex flex-col cursor-default">
+            {/* Image & Meta Badge Container */}
             <div className="relative mb-8">
               <div className="w-full h-48 overflow-hidden bg-gray-100">
                 <img 
@@ -30,6 +34,7 @@ const Blog = () => {
                   loading="lazy"
                 />
               </div>
+              {/* Overlapping Meta Badge */}
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#2eb8b8] text-white px-4 py-2 flex items-center gap-4 text-xs font-semibold tracking-wider whitespace-nowrap shadow-sm">
                 <div className="flex items-center gap-1.5">
                   <FaRegClock size={12} />
@@ -41,6 +46,7 @@ const Blog = () => {
                 </div>
               </div>
             </div>
+            {/* Text Content */}
             <div className="text-center px-2">
               <h3 className="text-sm font-serif font-bold text-gray-700 leading-relaxed mb-4">
                 Mobile Friendly Comments Dashboard now launched!
@@ -52,6 +58,7 @@ const Blog = () => {
             </div>
           </article>
 
+          {/* Post 2 */}
           <article className="flex flex-col cursor-default">
             <div className="relative mb-8">
               <div className="w-full h-48 overflow-hidden bg-gray-100">
@@ -84,6 +91,7 @@ const Blog = () => {
             </div>
           </article>
 
+          {/* Post 3 */}
           <article className="flex flex-col cursor-default">
             <div className="relative mb-8">
               <div className="w-full h-48 overflow-hidden bg-gray-100">
@@ -116,6 +124,7 @@ const Blog = () => {
             </div>
           </article>
 
+          {/* Post 4 */}
           <article className="flex flex-col cursor-default">
             <div className="relative mb-8">
               <div className="w-full h-48 overflow-hidden bg-gray-100">

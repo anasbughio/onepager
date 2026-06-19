@@ -9,11 +9,16 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
+          
+          {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
             <img src={logo} alt="Logo" className="h-10 w-auto" />
           </div>
 
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-4 text-sm font-semibold tracking-wide text-gray-600">      
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-4 text-sm font-semibold tracking-wide text-gray-600">
+            
+            {/* Active Link: HOME (Has the teal background box and skew) */}
             <a 
               href="#home" 
               className="px-4 py-2 transition-colors duration-200 bg-[#2eb8b8] text-white skew-x-[-10deg]"
@@ -43,6 +48,7 @@ const Navbar = () => {
             
           </nav>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -55,10 +61,12 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Navigation Dropdown */}
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             
+            {/* Active Link: HOME (Mobile) */}
             <a 
               href="#home" 
               onClick={() => setIsOpen(false)} 
@@ -67,6 +75,7 @@ const Navbar = () => {
               HOME
             </a>
 
+            {/* Standard Links (Mobile) */}
             <a 
               href="#portfolio" 
               onClick={() => setIsOpen(false)} 
