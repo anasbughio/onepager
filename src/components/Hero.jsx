@@ -21,8 +21,6 @@ const Hero = () => {
     >
     
       <div className="absolute inset-0 opacity-10"></div>
-      
-      {/* Left Arrow */}
       <button
         type="button"
         onClick={goToPreviousSlide}
@@ -33,8 +31,6 @@ const Hero = () => {
       </button>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        
-        {/* Slide 1 */}
         {activeSlide === 0 && (
           <>
             <h1 className="mb-0 text-center uppercase text-white hero-title">
@@ -47,9 +43,7 @@ const Hero = () => {
           type="button"
           className="relative mt-10 inline-block bg-[#2bb6b6] px-8 py-4 uppercase hero-btn-text">Learn More</button>
           </>
-        )}
-
-      
+        )} 
         {activeSlide === 1 && (
           <>
             <h1 className="mb-0 text-center uppercase text-white hero-title">
@@ -77,12 +71,7 @@ const Hero = () => {
             </p>
           </>
         )}
-
-       
-
       </div>
-
-    
       <button
         type="button"
         onClick={goToNextSlide}

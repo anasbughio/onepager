@@ -4,8 +4,6 @@ const Stats = () => {
   return (
     <section id="stats" className="py-24 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font_family text-3xl md:text-4xl font-bold tracking-[0.15em] text-black uppercase mb-4 font-serif">
             Company Stats
@@ -14,27 +12,18 @@ const Stats = () => {
             This is Photoshop's version of Lorem Ipsum. Proin gravida
           </p>
         </div>
-
-        {/* Stats Grid (Hardcoded) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          {/* Stat Card 1: Lines of code written */}
           <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white cursor-default">
-            {/* Icon */}
             <div className="text-[#2eb8b8] mb-6">
               <FaFlask size={48} />
             </div>
-            {/* Number */}
             <h3 className="font_family text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-wider">
               956779
             </h3>
-            {/* Label */}
             <p className="font-family text-gray-400 text-xs md:text-sm font-mono tracking-wide text-center">
               Lines of code written
             </p>
           </div>
-
-          {/* Stat Card 2: Coffe Drinked */}
           <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white cursor-default">
             <div className="text-[#2eb8b8] mb-6">
               <FaCoffee size={48} />
@@ -46,8 +35,6 @@ const Stats = () => {
               Coffe Drinked
             </p>
           </div>
-
-          {/* Stat Card 3: Happy Clients */}
           <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white cursor-default">
             <div className="text-[#2eb8b8] mb-6">
               <FaUsers size={48} />
@@ -59,8 +46,6 @@ const Stats = () => {
               Happy Clients
             </p>
           </div>
-
-          {/* Stat Card 4: Projects Done */}
           <div className="border border-gray-200 rounded-sm py-12 px-6 flex flex-col items-center justify-center bg-white cursor-default">
             <div className="text-[#2eb8b8] mb-6">
               <FaBriefcase size={48} />
