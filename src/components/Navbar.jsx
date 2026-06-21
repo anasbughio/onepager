@@ -17,31 +17,28 @@ const Navbar = () => {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
-          {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
             <img src={logo} alt="Logo" className="h-10 w-auto" />
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm tracking-wide text-gray-800 font-serif">
             
-            {/* HOME */}
             <a 
               href="#home" 
               onClick={() => handleLinkClick('home')}
               className="relative px-6 py-2 group"
             >
-              {/* The Skewed Background Box */}
+
               {activeLink === 'home' && (
                 <div className="absolute inset-0 bg-[#2eb8b8] -skew-x-[25deg] transform origin-center"></div>
               )}
-              {/* The Text (Sits on top of the box) */}
+
               <span className={`relative z-10 block transition-colors duration-200 ${activeLink === 'home' ? 'text-white' : 'group-hover:text-[#2eb8b8]'}`}>
                 HOME
               </span>
             </a>
 
-            {/* PORTFOLIO */}
+      
             <a 
               href="#portfolio" 
               onClick={() => handleLinkClick('portfolio')}
@@ -55,7 +52,6 @@ const Navbar = () => {
               </span>
             </a>
             
-            {/* SERVICES */}
             <a 
               href="#services" 
               onClick={() => handleLinkClick('services')}
@@ -68,8 +64,7 @@ const Navbar = () => {
                 SERVICES
               </span>
             </a>
-            
-            {/* TEAM */}
+
             <a 
               href="#team" 
               onClick={() => handleLinkClick('team')}
@@ -83,7 +78,6 @@ const Navbar = () => {
               </span>
             </a>
             
-            {/* ABOUT (Added based on screenshot) */}
             <a 
               href="#about" 
               onClick={() => handleLinkClick('about')}
@@ -97,7 +91,6 @@ const Navbar = () => {
               </span>
             </a>
 
-            {/* BLOG */}
             <a 
               href="#blog" 
               onClick={() => handleLinkClick('blog')}
@@ -111,7 +104,6 @@ const Navbar = () => {
               </span>
             </a>
             
-            {/* CONTACT US */}
             <a 
               href="#contact" 
               onClick={() => handleLinkClick('contact')}
@@ -127,7 +119,6 @@ const Navbar = () => {
             
           </nav>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -140,7 +131,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">

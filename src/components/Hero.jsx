@@ -17,12 +17,10 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="hero relative w-full h-[100vh] lg:h-[100vh] flex items-center justify-center bg-[#2c353f] overflow-hidden"
-    >
+      className="hero relative w-full h-[100vh] lg:h-[100vh] flex items-center justify-center bg-[#2c353f] overflow-hidden">
     
       <div className="absolute inset-0 opacity-10"></div>
-      
-      {/* Left Arrow */}
+  
       <button
         type="button"
         onClick={goToPreviousSlide}
@@ -34,7 +32,6 @@ const Hero = () => {
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         
-        {/* Slide 1 */}
         {activeSlide === 0 && (
           <>
             <h1 className="mb-0 text-center uppercase text-white hero-title">

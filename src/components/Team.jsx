@@ -14,7 +14,7 @@ import team4 from '../assets/team4.jpg';
 
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 2; // Slide 0 (first 4) and Slide 1 (next 4)
+  const totalSlides = 2;
 
   const goToPrev = () => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
@@ -29,7 +29,6 @@ const Team = () => {
       id="team" 
       className="relative py-24 bg-[#2c353f] overflow-hidden"
     >
-      {/* --- YOUTUBE VIDEO BACKGROUND --- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <iframe
           className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
@@ -39,12 +38,9 @@ const Team = () => {
           title="Background Video"
         ></iframe>
         
-        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-[#2c353f]/85"></div>
       </div>
-      {/* -------------------------------- */}
 
-      {/* Slider Arrows */}
       <button 
         onClick={goToPrev}
         className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#1a2026] text-white p-4 hover:bg-[#2eb8b8] transition-colors duration-300 z-20 hidden lg:block"
@@ -61,7 +57,6 @@ const Team = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font_family text-5xl md:text-4xl tracking-tight font-bold text-white uppercase mb-4 font-serif">
             Meet The Team
@@ -71,18 +66,14 @@ const Team = () => {
           </p>
         </div>
 
-        {/* Carousel Viewport */}
         <div className="overflow-hidden">
-          {/* Sliding Track */}
           <div 
             className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             
-            {/* ================= SLIDE 1 (First 4 Members) ================= */}
             <div className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              {/* TEAM MEMBER 1 */}
               <div className="flex flex-col group cursor-pointer">
                 <div className="w-full aspect-square overflow-hidden bg-gray-200">
                   <img src={team1} alt="Owen Miller" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
@@ -99,7 +90,6 @@ const Team = () => {
                 </div>
               </div>
 
-              {/* TEAM MEMBER 2 */}
               <div className="flex flex-col group cursor-pointer">
                 <div className="w-full aspect-square overflow-hidden bg-gray-200">
                   <img src={team2} alt="Mike William" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
@@ -116,7 +106,6 @@ const Team = () => {
                 </div>
               </div>
 
-              {/* TEAM MEMBER 3 */}
               <div className="flex flex-col group cursor-pointer">
                 <div className="w-full aspect-square overflow-hidden bg-gray-200">
                   <img src={team4} alt="Besim Dauti" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
@@ -133,7 +122,6 @@ const Team = () => {
                 </div>
               </div>
 
-              {/* TEAM MEMBER 4 */}
               <div className="flex flex-col group cursor-pointer">
                 <div className="w-full aspect-square overflow-hidden bg-gray-200">
                   <img src={team3} alt="Faton Avdiu" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
@@ -152,10 +140,8 @@ const Team = () => {
 
             </div>
 
-            {/* ================= SLIDE 2 (Next 4 Members) ================= */}
             <div className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              {/* TEAM MEMBER 5 */}
               <div className="flex flex-col group cursor-pointer">
                 <div className="w-full aspect-square overflow-hidden bg-gray-200">
                   <img src={team2} alt="John Doe" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
@@ -172,7 +158,6 @@ const Team = () => {
                 </div>
               </div>
 
-              {/* TEAM MEMBER 6 */}
               <div className="flex flex-col group cursor-pointer">
                 <div className="w-full aspect-square overflow-hidden bg-gray-200">
                   <img src={team1} alt="Sarah Smith" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
@@ -189,7 +174,6 @@ const Team = () => {
                 </div>
               </div>
 
-              {/* TEAM MEMBER 7 */}
               <div className="flex flex-col group cursor-pointer">
                 <div className="w-full aspect-square overflow-hidden bg-gray-200">
                   <img src={team3} alt="Mark Johnson" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
@@ -206,7 +190,6 @@ const Team = () => {
                 </div>
               </div>
 
-              {/* TEAM MEMBER 8 */}
               <div className="flex flex-col group cursor-pointer">
                 <div className="w-full aspect-square overflow-hidden bg-gray-200">
                   <img src={team4} alt="Emily Davis" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />

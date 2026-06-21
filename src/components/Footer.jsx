@@ -13,15 +13,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           
-          {/* Copyright Text */}
           <div className="font_family text-white text-sm font-serif tracking-wide text-center md:text-left">
             &copy; 2014 OnePager, All Rights Reserved
           </div>
 
-          {/* Social Icons (Hardcoded) */}
           <div className="flex items-center gap-3">
             
-            {/* Facebook */}
             <a 
               href="#" 
               className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
@@ -30,7 +27,6 @@ const Footer = () => {
               <FaFacebookF size={16} />
             </a>
 
-            {/* Twitter */}
             <a 
               href="#" 
               className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
@@ -39,7 +35,6 @@ const Footer = () => {
               <FaTwitter size={16} />
             </a>
 
-            {/* RSS */}
             <a 
               href="#" 
               className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
@@ -48,7 +43,6 @@ const Footer = () => {
               <FaRss size={16} />
             </a>
 
-            {/* Google Plus */}
             <a 
               href="#" 
               className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
@@ -57,7 +51,6 @@ const Footer = () => {
               <FaGooglePlusG size={16} />
             </a>
 
-            {/* LinkedIn */}
             <a 
               href="#" 
               className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
@@ -66,7 +59,6 @@ const Footer = () => {
               <FaLinkedinIn size={16} />
             </a>
 
-            {/* Pinterest */}
             <a 
               href="#" 
               className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white"
