@@ -55,13 +55,13 @@ const Team = () => {
         <FaChevronRight size={16} />
       </button>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-17.5 relative z-10">
         
-        <div className="text-center mb-16">
-          <h2 className="font_family text-5xl md:text-4xl tracking-tight font-bold text-white uppercase mb-4 font-serif">
+        <div className="text-center mb-10">
+          <h2 className="font_family text-[45px] md:text-[45px] font-bold text-white uppercase mb-0">
             Meet The Team
           </h2>
-          <p className="font_family text-gray-300 text-sm md:text-base max-w-2xl mx-auto">
+          <p className="font_family text-white text-lg md:text-base max-w-2xl mx-auto">
             This is Photoshop's version of Lorem Ipsum. Proin gravida
           </p>
         </div>
@@ -79,8 +79,8 @@ const Team = () => {
                   <img src={team1} alt="Owen Miller" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
                 </div>
                 <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
-                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Owen Miller</h3>
-                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-[20px] mb-1">Owen Miller</h3>
+                  <p className="font_family text-gray-400 text-md font-serif">developer</p>
                 </div>
                 <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
                   <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
@@ -95,8 +95,8 @@ const Team = () => {
                   <img src={team2} alt="Mike William" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
                 </div>
                 <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
-                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Mike William</h3>
-                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-[20px] mb-1">Mike William</h3>
+                  <p className="font_family text-gray-400 text-md font-serif">developer</p>
                 </div>
                 <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
                   <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
@@ -111,8 +111,8 @@ const Team = () => {
                   <img src={team4} alt="Besim Dauti" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
                 </div>
                 <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
-                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Besim Dauti</h3>
-                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-[20px] mb-1">Besim Dauti</h3>
+                  <p className="font_family text-gray-400 text-md font-serif">developer</p>
                 </div>
                 <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
                   <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
@@ -127,8 +127,8 @@ const Team = () => {
                   <img src={team3} alt="Faton Avdiu" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
                 </div>
                 <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
-                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">Faton Avdiu</h3>
-                  <p className="font_family text-gray-400 text-xs font-serif">developer</p>
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-[20px] mb-1">Faton Avdiu</h3>
+                  <p className="font_family text-gray-400 text-md font-serif">developer</p>
                 </div>
                 <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
                   <a href="#" className="w-7 h-7 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#2eb8b8] transition-colors"><FaFacebookF size={12} /></a>
@@ -147,7 +147,7 @@ const Team = () => {
                   <img src={team2} alt="John Doe" className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" loading="lazy" />
                 </div>
                 <div className="bg-[#1e252c] p-5 border-b border-[#151a1e]">
-                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-lg mb-1">John Doe</h3>
+                  <h3 className="font_family text-white font-bold font-serif tracking-wide text-[20px] mb-1">John Doe</h3>
                   <p className="font_family text-gray-400 text-xs font-serif">designer</p>
                 </div>
                 <div className="bg-[#2eb8b8] py-4 px-5 flex justify-start gap-3">
