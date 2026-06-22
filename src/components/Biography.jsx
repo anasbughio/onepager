@@ -11,14 +11,14 @@ const Biography = () => {
           
           <div>
             <div className="mb-8">
-              <h2 className="font_family text-2xl md:text-3xl font-bold tracking-[0.1em] text-black uppercase mb-3 font-serif">
+              <h2 className="font_family text-[35px] md:text-[35px] font-bold tracking-[0em] text-black uppercase mb-3 font-serif">
                 Company Biography
               </h2>
-              <div className="font_family inline-block bg-[#2eb8b8] text-white text-xs md:text-sm tracking-widest px-3 py-1 uppercase">
+              <div className="font_family inline-block bg-[#2eb8b8] text-white text-lg md:text-lg px-1 py-0 uppercase">
                 Short Story About Us
               </div>
             </div>
-            <div className="space-y-6 text-gray-500 font-serif text-sm md:text-base leading-relaxed">
+            <div className="space-y-6 text-gray-500 font-serif text-[20px] md:text-[20px] leading-relaxed">
               <p className='font_family'>
                 This is <span className="text-[#2eb8b8] font-bold">Photoshop's</span> version of Lorem Ipsum. 
                 Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit
@@ -40,10 +40,10 @@ const Biography = () => {
             
             <div className="mb-8 flex items-end justify-between gap-4">
               <div>
-                <h2 className="font_family text-2xl md:text-3xl font-bold tracking-[0.1em] text-black uppercase mb-3 font-serif">
+                <h2 className="font_family text-[35px] md:text-[35px] font-bold text-black uppercase mb-1">
                   Our Clients
                 </h2>
-                <div className="font_family inline-block bg-[#2eb8b8] text-white text-xs md:text-sm tracking-widest px-3 py-1 uppercase">
+                <div className="font_family inline-block bg-[#2eb8b8] text-white text-xl md:text-xl tracking-widest px-1 py-0 uppercase">
                   We Love Our Clients
                 </div>
               </div>

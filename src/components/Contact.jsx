@@ -9,13 +9,13 @@ import {
 const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-[#232527]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-15">
         
-        <div className="text-center mb-16">
-          <h2 className="font_family text-5xl md:text-5xl font-bold tracking-[-0.01em] text-white uppercase mb-4 font-serif">
+        <div className="text-center mb-9">
+          <h2 className="font_family text-[45px] md:text-[45px] font-bold  text-white uppercase">
             Get In Touch!
           </h2>
-          <p className="font_family text-white text-sm md:text-base max-w-2xl mx-auto font-serif">
+          <p className="font_family text-white text-lg md:text-lg max-w-2xl mx-auto font-serif">
             This is Photoshop's version of Lorem Ipsum. Proin gravida
           </p>
         </div>
@@ -71,7 +71,7 @@ const Contact = () => {
                 <input 
                   type="text" 
                   placeholder="Name" 
-                  className="w-full px-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400"
+                  className="font_family w-full px-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400"
                   required
                 />
               </div>
@@ -85,7 +85,7 @@ const Contact = () => {
                 <input 
                   type="email" 
                   placeholder="e-mail" 
-                  className="w-full px-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400"
+                  className="font_family w-full px-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400"
                   required
                 />
               </div>
@@ -99,7 +99,7 @@ const Contact = () => {
                 <input 
                   type="url" 
                   placeholder="website" 
-                  className="w-full px-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400"
+                  className="font_family w-full px-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400"
                 />
               </div>
             </div>
@@ -108,7 +108,7 @@ const Contact = () => {
               <div className="w-full bg-white flex-grow min-h-[120px]">
                 <textarea 
                   placeholder="Message" 
-                  className="w-full h-full p-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400 resize-none"
+                  className="font_family w-full h-full p-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400 resize-none"
                   required
                 ></textarea>
               </div>

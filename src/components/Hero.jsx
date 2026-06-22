@@ -34,15 +34,20 @@ const Hero = () => {
         
         {activeSlide === 0 && (
           <>
-            <h1 className="mb-0 text-center uppercase text-white hero-title">
+            <h1 className="text-center uppercase text-white hero-title">
               WELCOME TO <span className="text-[rgb(43,182,182)] font-bold">ONE<span className="font-bold text-white">PAGER</span></span>
             </h1>
-            <p className="mx-auto mt-6 mb-10 max-w-[640px] text-center text-white hero-subtitle">
-              We design and develop awesome websites and smart applications, impactful identities using the latest
+            <p className="mx-auto mb-5 max-w-[640px] text-center text-white hero-subtitle">
+              we design and develop awesome websites and smart applications, impactful identities using the latest
             </p>
              <button
-          type="button"
-          className="relative mt-10 inline-block bg-[#2bb6b6] px-8 py-4 uppercase hero-btn-text">Learn More</button>
+  type="button"
+  className="relative mt-0 inline-block bg-[#2bb6b6] px-8 py-4 -skew-x-24 cursor-pointer"
+>
+  <span className="inline-block skew-x-24 uppercase hero-btn-text text-white font-bold">
+    Learn More
+  </span>
+</button>
           </>
         )}
 
@@ -52,23 +57,24 @@ const Hero = () => {
             <h1 className="mb-0 text-center uppercase text-white hero-title">
               WE ARE GREAT <span className="font-bold text-white">COMPANY</span>
             </h1>
-            <p className="mx-auto mt-6 mb-10 max-w-[640px] text-center text-white hero-subtitle">
+            <p className="mx-auto mt-0 mb-5 max-w-[640px] text-center text-white hero-subtitle">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             </p>
-             <button
-          type="button"
-          className="relative mt-10 inline-block bg-[#2bb6b6] px-8 py-4 uppercase hero-btn-text"
-        >Learn More</button>
+           <button type="button"
+        className="relative mt-0 inline-block bg-[#2bb6b6] px-8 py-4 -skew-x-12 cursor-pointer">
+    <span className="inline-block skew-x-12 uppercase hero-btn-text text-white font-bold">Learn More</span>
+</button>
           </>
         )}
 
         
         {activeSlide === 2 && (
           <>
-           <h1 className="mb-0 text-center uppercase text-white hero-title">
-               <span className="text-[rgb(43,182,182)] font-bold">ONE<span className="font-bold text-white">PAGER </span></span>
-               IS VERY SUITABLE
-            </h1>
+          <h1 className="hero-sec-title font_family text-center uppercase text-white tracking-tight">
+  <span className="text-[#2bb6b6] font-bold">ONE</span>
+  <span className="text-white font-bold">PAGER</span>
+  {" "}IS VERY SUITABLE
+</h1>
             <p className="mx-auto mt-6 mb-10 max-w-[640px] text-center text-white hero-subtitle">
               Building modern products and experiences for growing brands and teams
             </p>
