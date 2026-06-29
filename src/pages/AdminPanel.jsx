@@ -181,31 +181,35 @@ export default function AdminPanel() {
             <p className="text-gray-400 text-sm text-center py-8 italic">No sections yet. Add one above.</p>
           ) : (
             <div className="space-y-3">
-              {sections.map(section => (
-                <div key={section._id}
-                  className="flex justify-between items-start gap-4 p-4 border border-gray-100 rounded-lg hover:border-[#2eb8b8] transition-colors">
-                  <div className="flex gap-3 flex-1 min-w-0">
-                    {section.image && (
-                      <img src={section.image} alt={section.title}
-                        className="w-16 h-16 object-cover rounded-lg flex-shrink-0 border border-gray-100" />
-                    )}
-                    <div className="min-w-0">
-                      <h3 className="font-medium text-gray-800 text-sm mb-1">{section.title}</h3>
-                      <p className="text-gray-500 text-xs line-clamp-2">{section.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 flex-shrink-0">
-                    <button onClick={() => handleEdit(section)}
-                      className="text-xs border border-gray-200 text-gray-600 px-3 py-1.5 rounded-lg hover:border-[#2eb8b8] hover:text-[#2eb8b8] transition-colors">
-                      Edit
-                    </button>
-                    <button onClick={() => handleDelete(section._id)}
-                      className="text-xs border border-red-100 text-red-400 px-3 py-1.5 rounded-lg hover:bg-red-50 transition-colors">
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              ))}
+       {sections.map(section => (
+  <div key={section._id}
+    className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 p-4 border border-gray-100 rounded-lg hover:border-[#2eb8b8] transition-colors">
+    
+    {/* Image and Text Container */}
+    <div className="flex gap-3 flex-1 min-w-0 w-full">
+      {section.image && (
+        <img src={section.image} alt={section.title}
+          className="w-16 h-16 object-cover rounded-lg flex-shrink-0 border border-gray-100" />
+      )}
+      <div className="min-w-0 flex-1">
+        <h3 className="font-medium text-gray-800 text-sm mb-1 truncate">{section.title}</h3>
+        <p className="text-gray-500 text-xs line-clamp-2">{section.description}</p>
+      </div>
+    </div>
+
+    {/* Buttons Container */}
+    <div className="flex gap-2 w-full md:w-auto justify-end">
+      <button onClick={() => handleEdit(section)}
+        className="text-xs border border-gray-200 text-gray-600 px-3 py-1.5 rounded-lg hover:border-[#2eb8b8] hover:text-[#2eb8b8] transition-colors">
+        Edit
+      </button>
+      <button onClick={() => handleDelete(section._id)}
+        className="text-xs border border-red-100 text-red-400 px-3 py-1.5 rounded-lg hover:bg-red-50 transition-colors">
+        Delete
+      </button>
+    </div>
+  </div>
+))}
             </div>
           )}
         </div>
