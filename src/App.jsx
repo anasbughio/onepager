@@ -19,20 +19,21 @@ import ServicesPage from './pages/ServicesPage';
 import TeamPage from './pages/TeamPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <>
       <div className="App">
+        <ScrollToTop />
 <Routes>
   {/* Landing Page */}
   <Route path="/" element={
     <>
-      <Hero />
       <Navbar />
-      <Biography />
-      <Stats />
+     <Home />
       <Footer />
     </>
   } />
