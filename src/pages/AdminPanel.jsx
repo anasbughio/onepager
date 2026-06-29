@@ -99,11 +99,14 @@ export default function AdminPanel() {
     setSuccess('')
   }
 
-  const handleLogout = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('user')
-    navigate('/')
+const handleLogout = () => {
+  if (window.confirm('Are you sure you want to log out?')) {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setIsOpen(false);
+    navigate('/');
   }
+};
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">

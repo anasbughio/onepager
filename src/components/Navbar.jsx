@@ -14,13 +14,14 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  const handleLogout = () => {
+ const handleLogout = () => {
+  if (window.confirm('Are you sure you want to log out?')) {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setIsOpen(false);
     navigate('/');
-  };
-
+  }
+};
   return (
     <header className="sticky top-0 py-2 md:py-3 min-[1170px]:py-5 z-50 w-full bg-white shadow-sm border-b border-gray-100 transition-all duration-300">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
