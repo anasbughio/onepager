@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import AuthLayout from '../components/AuthLayout'
 
 const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
 
@@ -35,7 +36,7 @@ export default function ForgotPassword() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <AuthLayout>
       <div className="w-full max-w-md bg-white rounded-xl shadow-md p-8 border border-gray-100">
         <h2 className="font-serif text-2xl font-bold text-gray-800 mb-1">Forgot Password</h2>
         <p className="text-gray-500 text-sm mb-6">Enter your email to receive a reset link</p>
@@ -68,6 +69,6 @@ export default function ForgotPassword() {
           <Link to="/login" className="text-[#2eb8b8] hover:underline">← Back to login</Link>
         </p>
       </div>
-    </div>
+    </AuthLayout>
   )
 }
