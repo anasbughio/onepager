@@ -149,12 +149,15 @@ const handleLogout = () => {
                 value={form.image} onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#2eb8b8]" />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Display Order</label>
-              <input name="order" type="number" placeholder="0"
-                value={form.order} onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#2eb8b8]" />
-            </div>
+           <div>
+  <label className="block text-sm font-medium text-gray-700 mb-1">Display Order</label>
+  <input name="order" type="number" placeholder="0"
+    value={form.order} onChange={handleChange}
+    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#2eb8b8]" />
+  <p className="text-xs text-gray-400 mt-1.5">
+    Controls the position on the homepage — lower numbers appear first. If two sections share the same number, they'll appear in the order they were created instead.
+  </p>
+</div>
 
             {error && <p className="text-red-500 text-sm bg-red-50 px-3 py-2 rounded-lg">{error}</p>}
             {success && <p className="text-green-600 text-sm bg-green-50 px-3 py-2 rounded-lg">{success}</p>}
