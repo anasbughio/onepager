@@ -1,67 +1,49 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Hero from './components/Hero'
 import './App.css'
-import Navbar from './components/Navbar'
-import Portfolio from './components/Portfolio'
-import Services from './components/Services'
-import Team from './components/Team'
-import Biography from './components/Biography'
-import Stats from './components/Stats'
-import Blog from './components/Blog'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import PortfolioPage from './pages/PortfolioPage'
+import ServicesPage from './pages/ServicesPage'
+import TeamPage from './pages/TeamPage'
+import BlogPage from './pages/BlogPage'
+import ContactPage from './pages/ContactPage'
+import AboutPage from './pages/AboutPage'
 import Login from './pages/Login'
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword'
 import AdminPanel from './pages/AdminPanel'
 import ProtectedRoute from './components/ProtectedRoute'
-import PortfolioPage from './pages/PortfolioPage';
-import ServicesPage from './pages/ServicesPage';
-import TeamPage from './pages/TeamPage';
-import BlogPage from './pages/BlogPage';
-import ContactPage from './pages/ContactPage';
-import Home from './pages/Home';
-import AboutPage from './pages/AboutPage';
-import ScrollToTop from './components/ScrollToTop';
-import ForgotPassword from './pages/ForgotPassword';
-import ResetPassword from './pages/ResetPassword';
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <ScrollToTop />
-<Routes>
-  {/* Landing Page */}
-  <Route path="/" element={
-    <>
-      <Navbar />
-     <Home />
-      <Footer />
-    </>
-  } />
+    <div className="App">
+      <ScrollToTop />
+      <Routes>
 
-  {/* Separate Pages */}
-  <Route path="/portfolio" element={<><Navbar /><PortfolioPage /><Footer /></>} />
-  <Route path="/services" element={<><Navbar /><ServicesPage /><Footer /></>} />
-  <Route path="/about" element={<><Navbar /><AboutPage /><Footer /></>} />
-  <Route path="/team" element={<><Navbar /><TeamPage /><Footer /></>} />
-  <Route path="/blog" element={<><Navbar /><BlogPage /><Footer /></>} />
-  <Route path="/contact" element={<><Navbar /><ContactPage /><Footer /></>} />
+        {/* Pages with Navbar + Footer */}
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/portfolio" element={<Layout><PortfolioPage /></Layout>} />
+        <Route path="/services" element={<Layout><ServicesPage /></Layout>} />
+        <Route path="/about" element={<Layout><AboutPage /></Layout>} />
+        <Route path="/team" element={<Layout><TeamPage /></Layout>} />
+        <Route path="/blog" element={<Layout><BlogPage /></Layout>} />
+        <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
 
-  {/* Auth & Admin */}
-  <Route path="/login" element={<><Navbar /><Login /><Footer /></>} />
-  <Route path="/forgot-password" element={<><Navbar /><ForgotPassword /><Footer /></>} />
-  <Route path="/reset-password/:token" element={<><Navbar /><ResetPassword /><Footer /></>} />
-  <Route path="/admin" element={
-    <ProtectedRoute>
-      <Navbar />
-      <AdminPanel />
-      <Footer />
-    </ProtectedRoute>
-  } />
-</Routes>
-      </div>
-    </>
+        {/* Auth pages — no Navbar/Footer, own layout with back button */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
+
+        {/* Admin — protected, with Navbar + Footer */}
+        <Route path="/admin" element={
+          <ProtectedRoute>
+            <Layout><AdminPanel /></Layout>
+          </ProtectedRoute>
+        } />
+
+      </Routes>
+    </div>
   )
 }
 
