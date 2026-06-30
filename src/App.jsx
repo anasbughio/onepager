@@ -22,6 +22,8 @@ import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import ScrollToTop from './components/ScrollToTop';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
 
   {/* Auth & Admin */}
   <Route path="/login" element={<><Navbar /><Login /><Footer /></>} />
+  <Route path="/forgot-password" element={<><Navbar /><ForgotPassword /><Footer /></>} />
+  <Route path="/reset-password/:token" element={<><Navbar /><ResetPassword /><Footer /></>} />
   <Route path="/admin" element={
     <ProtectedRoute>
       <Navbar />

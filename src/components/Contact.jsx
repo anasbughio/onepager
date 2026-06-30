@@ -1,16 +1,54 @@
-import { 
-  FaHome, 
-  FaPhoneAlt, 
-  FaEnvelope, 
-  FaUser, 
-  FaLink 
+import { useState } from 'react'
+import {
+  FaHome,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaUser,
+  FaLink
 } from 'react-icons/fa';
 
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
 const Contact = () => {
+  const [form, setForm] = useState({ name: '', email: '', website: '', message: '' })
+  const [status, setStatus] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    setError('')
+    setStatus('')
+
+    if (!form.name || !form.email || !form.message) {
+      setError('Please fill in name, email and message.')
+      return
+    }
+
+    setLoading(true)
+    try {
+      const res = await fetch(`${BASE_URL}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.message || 'Failed to send message')
+      setStatus('success')
+      setForm({ name: '', email: '', website: '', message: '' })
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <section id="contact" className="py-24 bg-[#232527]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-15">
-        
+
         <div className="text-center mb-9">
           <h2 className="font_family text-[45px] md:text-[45px] font-bold  text-white uppercase">
             Get In Touch!
@@ -21,19 +59,19 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
-          
+
           <div className="text-gray-400 font-serif">
             <h3 className="font_family text-3xl text-white mb-2 tracking-wide">
               Contact info
             </h3>
-            
+
             <div className="font_family text-white space-y-6 mb-5 text-sm">
               <p>
-                Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non 
+                Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non
                 mauris vitae erat consequat.
               </p>
               <p>
-                Nullam ac urna eu felis dapibus condimentum sit amet a augue. 
+                Nullam ac urna eu felis dapibus condimentum sit amet a augue.
                 Sed non neque elit. Sed ut imperd iet nisi. Proin condimentum
               </p>
             </div>
@@ -56,11 +94,11 @@ const Contact = () => {
             </div>
           </div>
 
-          <form 
+          <form
             className="grid grid-cols-1 md:grid-cols-2 gap-4"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
-            
+
             <div className="flex flex-col gap-4">
               <div className="flex w-full bg-white h-12">
                 <div className="w-14 flex-shrink-0 flex items-center justify-center border-r border-gray-100">
@@ -68,9 +106,12 @@ const Contact = () => {
                     <FaUser size={10} />
                   </div>
                 </div>
-                <input 
-                  type="text" 
-                  placeholder="Name" 
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  value={form.name}
+                  onChange={handleChange}
                   className="font_family w-full px-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400"
                   required
                 />
@@ -82,9 +123,12 @@ const Contact = () => {
                     <FaEnvelope size={10} />
                   </div>
                 </div>
-                <input 
-                  type="email" 
-                  placeholder="e-mail" 
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="e-mail"
+                  value={form.email}
+                  onChange={handleChange}
                   className="font_family w-full px-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400"
                   required
                 />
@@ -96,9 +140,12 @@ const Contact = () => {
                     <FaLink size={10} />
                   </div>
                 </div>
-                <input 
-                  type="url" 
-                  placeholder="website" 
+                <input
+                  name="website"
+                  type="url"
+                  placeholder="website"
+                  value={form.website}
+                  onChange={handleChange}
                   className="font_family w-full px-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400"
                 />
               </div>
@@ -106,18 +153,31 @@ const Contact = () => {
 
             <div className="flex flex-col gap-4 h-full">
               <div className="w-full bg-white flex-grow min-h-[120px]">
-                <textarea 
-                  placeholder="Message" 
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  value={form.message}
+                  onChange={handleChange}
                   className="font_family w-full h-full p-4 text-sm focus:outline-none font-serif text-gray-700 placeholder-gray-400 resize-none"
                   required
                 ></textarea>
               </div>
 
-              <button 
-                type="submit" 
-                className="font_family w-full h-12 bg-[#2eb8b8] text-white font-bold tracking-widest text-sm hover:bg-[#259696] transition-colors duration-300"
+              {error && (
+                <p className="font_family text-red-400 text-sm bg-red-900/20 px-3 py-2 rounded">{error}</p>
+              )}
+              {status === 'success' && (
+                <p className="font_family text-[#2eb8b8] text-sm bg-[#2eb8b8]/10 px-3 py-2 rounded">
+                  Message sent successfully! I'll get back to you soon.
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="font_family w-full h-12 bg-[#2eb8b8] text-white font-bold tracking-widest text-sm hover:bg-[#259696] transition-colors duration-300 disabled:opacity-60"
               >
-                SEND MESSAGE
+                {loading ? 'SENDING...' : 'SEND MESSAGE'}
               </button>
             </div>
 
