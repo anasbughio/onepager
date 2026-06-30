@@ -26,6 +26,7 @@ export default function Login() {
           body: JSON.stringify(form),
         }
       )
+      
       const data = await res.json()
       if (!res.ok) throw new Error(data.message || 'Login failed')
       localStorage.setItem('token', data.token)
@@ -67,6 +68,12 @@ export default function Login() {
               className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#2eb8b8] transition-colors"
             />
           </div>
+
+          <div className="text-right">
+  <Link to="/forgot-password" className="text-xs text-[#2eb8b8] hover:underline">
+    Forgot password?
+  </Link>
+</div>
 
           {error && (
             <p className="text-red-500 text-sm bg-red-50 px-3 py-2 rounded-lg">{error}</p>
